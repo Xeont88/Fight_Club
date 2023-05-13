@@ -2,7 +2,6 @@ import random
 import time
 
 
-# TODO: добавить удары и блоки разных частей тела
 class Fighter:
     def __init__(self, name, health=100):
         self.name = name
@@ -12,9 +11,7 @@ class Fighter:
         self.block_area = "торс"
 
     def hit(self, enemy, area='торс'):
-
         area = "торс" if area == "" else area
-
         hit = self.strange * random.randint(1, 10)  # текущий урон
         if enemy.block_area != area:
             enemy.health -= hit
