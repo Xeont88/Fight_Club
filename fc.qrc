@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="newPrefix">
+    <file>zeke.jpg</file>
+    <file>atack_on_titans_levi_.jpg</file>
+  </qresource>
+</RCC>

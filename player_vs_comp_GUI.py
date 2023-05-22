@@ -4,15 +4,19 @@ from random import choice
 
 root = Tk()
 root.title('Бойцовский Клуб!!!')
-root.geometry('250x150')
+root.geometry('450x150')
 
 # Создаём фреймы слева и справа
 frame_attack = Frame()
 frame_defence = Frame()
 
+# Создаём фрейм для текстового поля
+text_frame = Frame()
+
 # Размещаем фреймы слева и справа
-frame_attack.pack(side='left', )
-frame_defence.pack(side='right', )
+frame_attack.pack(side='left', anchor='w')
+frame_defence.pack(side='right', anchor='e')
+text_frame.pack(side='bottom', anchor='s')
 
 # переменная для хранения области для атаки
 attack_var = IntVar()
@@ -40,9 +44,6 @@ rb_defense_belt.pack(anchor='w')
 rb_defense_legs = Radiobutton(frame_defence, text='Ноги', variable=defense_var, value=3)
 rb_defense_legs.pack(anchor='w')
 
-me = Fighter('Руслан')
-comp = Fighter('ЧатБот ДжиПиТи')
-
 area_list = ["голову", "торс", "пояс", "ноги"]
 
 
@@ -60,5 +61,12 @@ def attack():
 
 btn = Button(root, text='Ход', command=attack)
 btn.pack(side='bottom')
+
+log = Text(height=7, font='Times')
+log.pack()
+
+# Объявляем объекты бойцов
+me = Fighter('Руслан', text_log=log)
+comp = Fighter('ЧатБот ДжиПиТи', text_log=log)
 
 root.mainloop()
